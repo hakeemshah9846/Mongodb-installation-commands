@@ -1,0 +1,40 @@
+mongod
+  415  sudo apt update
+  416  sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common
+  417  	
+  418  wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+  419  echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+  420  	
+  421  sudo apt update
+  422  	
+  423  sudo apt install mongodb-org
+  424  cd Downloads/
+  425  ls
+  426  sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.20_amd64.deb 
+  427  sudo apt install mongodb-org
+  428  mongod
+  429  sudo systemctl start mongod
+  430  mongosh
+  431  mongo
+  432  sudo systemctl status mongod
+  433  clear
+  434  sudo systemctl enable mongod
+  435  cd /lib/systemd/system/
+  436  ls
+  437  sudo vim mongod.service 
+  438  sudo nano mongod.service 
+  439  sudo systemctl daemon-reload
+  440  cd /tmp/
+  441  ls
+  442  rm mongodb-27017.sock 
+  443  sudo systemctl start mongod
+  444  sudo systemctl status mongod
+  445  mongo
+  446  history
+
+
+http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/?C=M;O=D
+
+https://ubunlog.com/en/mongodb-4-4-instalacion-versiones-lts-de-ubuntu/#google_vignette
+
+https://ubunlog.com/en/mongodb-4-4-instalacion-versiones-lts-de-ubuntu/
